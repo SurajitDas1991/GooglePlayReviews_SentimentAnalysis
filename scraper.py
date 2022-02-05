@@ -20,11 +20,11 @@ app_packages = [
   'com.mobile.simplilearn',
   'com.datacamp',
   'com.duolingo',
-  'free.programming.programming',
-  'air.nn.mobile.app.main',
+  'com.getmimo',
+  'com.enki.insights',
   'com.microsoft.math',
   'com.zerodha.varsity',
-  'justimaginestudio.com.mindset_achieveyourgoals',
+  'com.learnprogramming.codecamp',
   'com.deepstash',
   'co.brainly',
   'com.byjus.thelearningapp',
@@ -61,7 +61,7 @@ def format_title(title:str):
     sep_index=title.find(':') if title.find(':') !=-1 else title.find('-')
     if sep_index!=-1:
         title=title[:sep_index]
-    return title[:10]
+    return title
 
 fig, axs = plt.subplots(2, len(app_infos) // 2, figsize=(14, 5))
 
@@ -69,19 +69,21 @@ fig, axs = plt.subplots(2, len(app_infos) // 2, figsize=(14, 5))
 #Show some icons from the scraped data
 for i, ax in enumerate(axs.flat):
   ai = app_infos[i]
-  urllib.request.urlretrieve(ai['icon'],ai['title']+".png")
-  pil_im = Image.open(ai['title']+".png", 'r')
+  extension=".png"
+  title=format_title(ai['title'])
+  urllib.request.urlretrieve(ai['icon'],fr"./images/{title}{extension}")
+  pil_im = Image.open(fr"./images/{title}{extension}", 'r')
+  #pil_im.save(f"./images/{ai['title']}"+".png")
   ax.imshow(np.asarray(pil_im))
- # img = plt.imread(ai['icon'])
   #ax.imshow(img)
   ax.set_title(format_title(ai['title']))
   ax.axis('off')
 
-plt.show()
+#plt.show()
 
 #Export the data to a dataframe
 app_infos_df = pd.DataFrame(app_infos)
-app_infos_df.to_csv('apps.csv', index=None, header=True)
+app_infos_df.to_csv('./reports/apps.csv', index=None, header=True)
 #print(app_infos_df.head())
 
 
@@ -108,4 +110,4 @@ print_json(app_reviews[1])
 print(len(app_reviews))
 
 app_reviews_df = pd.DataFrame(app_reviews)
-app_reviews_df.to_csv('reviews.csv', index=None, header=True)
+app_reviews_df.to_csv('./reports/reviews.csv', index=None, header=True)
