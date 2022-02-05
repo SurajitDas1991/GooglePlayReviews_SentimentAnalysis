@@ -29,6 +29,6 @@ The app scraps data of some of the pre-defined google play apps and dumps the da
 
 # SCREENSHOTS EXAMPLES
 
-  ![plot](./images/Coursera.png)
-  ![plot](./images/edX.png)
-  ![plot](./images/Simplilearn.png)
+![plot](./images/Coursera.png)
+![plot](./images/edX.png)
+![plot](./images/Simplilearn.png)
