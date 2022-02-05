@@ -117,4 +117,4 @@ dmypy.json
 .VSCODE
 
 #Image files
-*.png
+#*.png
