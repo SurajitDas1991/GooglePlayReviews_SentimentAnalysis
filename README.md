@@ -30,5 +30,5 @@ The app scraps data of some of the pre-defined google play apps and dumps the da
 # SCREENSHOTS EXAMPLES
 
   ![plot](./images/Coursera.png)
-  ![plot](./images/Zerodha Varsity, Stock market education for all.png)
+  ![plot](./images/edX.png)
   ![plot](./images/Simplilearn.png)
